@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MyViewPager mViewPager;
+    private ViewPager mViewPager;
 
     private MyPagerAdapter mPagerAdapter;
 
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void init() {
-        mViewPager = (MyViewPager) findViewById(R.id.my_viewpager);
+        mViewPager = (ViewPager) findViewById(R.id.my_viewpager);
         mTabLayout = (TabLayout) findViewById(R.id.my_tabLayout);
 
         mPagerAdapter = new MyPagerAdapter(getData(), this);
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 mViewPager.setCurrentItem(tab.getPosition());
-                mViewPager.reMeasureCurrentPage(mViewPager.findViewWithTag(MyPagerAdapter.TAG + tab.getPosition()));
+//                mViewPager.reMeasureCurrentPage(mViewPager.findViewWithTag(MyPagerAdapter.TAG + tab.getPosition()));
 
                 if (null != tab.getCustomView()) {
                     TextView tv = (TextView) tab.getCustomView().findViewById(R.id.tv_custom);
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 mLastSelectedIndex = position;
-                mViewPager.reMeasureCurrentPage(mViewPager.findViewWithTag(MyPagerAdapter.TAG + position));
+//                mViewPager.reMeasureCurrentPage(mViewPager.findViewWithTag(MyPagerAdapter.TAG + position));
 
             }
 
