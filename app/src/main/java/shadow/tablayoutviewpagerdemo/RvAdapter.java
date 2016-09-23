@@ -42,7 +42,7 @@ public class RvAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mDataList.size();
     }
 
 
